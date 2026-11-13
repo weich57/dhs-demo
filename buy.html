@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大华山白桃 · 12 装 · 89 元 | 乡邻帮 · 大华山村</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { background:#f2efe6; }
+  .buy-wrap { max-width:480px; margin:0 auto; min-height:100vh; background:var(--paper); display:flex; flex-direction:column; }
+  .buy-hero { height:280px; background:linear-gradient(150deg,#f7e3d0 0%,#e8c9a8 55%,#d9b384 100%); display:flex; align-items:center; justify-content:center; font-size:96px; position:relative; }
+  .buy-hero .tag-origin { position:absolute; top:14px; left:14px; background:rgba(44,64,48,.82); color:#fff; font-size:11px; padding:5px 10px; border-radius:20px; letter-spacing:1px; }
+  .buy-body { padding:18px 18px 96px; }
+  .buy-price { font-family:var(--serif); font-size:34px; font-weight:700; color:var(--green); }
+  .buy-price small { font-size:14px; font-family:var(--sans); color:var(--muted); font-weight:400; margin-left:8px; text-decoration:line-through; }
+  .buy-meta { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 4px; }
+  .buy-farm { display:flex; align-items:center; gap:10px; border:1px solid var(--hair); border-radius:12px; padding:12px; margin:16px 0; }
+  .buy-bottom { position:fixed; bottom:0; left:0; right:0; max-width:480px; margin:0 auto; background:var(--paper); border-top:1px solid var(--hair); padding:12px 16px calc(12px + env(safe-area-inset-bottom)); display:flex; gap:10px; align-items:center; box-shadow:0 -6px 20px rgba(44,64,48,.06); }
+  .buy-btn { flex:1; background:var(--green); color:#fff; border:none; border-radius:12px; padding:15px; font-size:16px; font-weight:600; cursor:pointer; font-family:var(--sans); }
+  .trace-row { display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--hair); font-size:13px; }
+  .trace-row .k { color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="buy-wrap">
+  <div class="buy-hero">🍑<span class="tag-origin">平谷区大华山村 · 一物一码溯源</span></div>
+
+  <div class="buy-body">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between">
+      <div>
+        <div style="font-family:var(--serif); font-size:21px; font-weight:700">大华山白桃 · 12 装</div>
+        <div class="card-sub" style="margin-top:4px">果径 ≥ 75mm · 当日采摘当日发货</div>
+      </div>
+      <div style="text-align:right">
+        <div class="buy-price">¥89<small>¥109</small></div>
+        <div class="card-sub">已售 1,286 箱</div>
+      </div>
+    </div>
+
+    <div class="buy-meta">
+      <span class="badge gold">坏果包赔</span>
+      <span class="badge">货款银行托管</span>
+      <span class="badge">村分拣点验货</span>
+      <span class="badge">箱码溯源</span>
+    </div>
+
+    <div class="buy-farm">
+      <div class="avatar">张</div>
+      <div style="flex:1">
+        <div style="font-weight:600; font-size:14px">张大山 · 3 号桃园</div>
+        <div class="card-sub">大华山村 · 种桃 26 年 · 平台实名认证农户</div>
+      </div>
+      <span class="badge">信用 95</span>
+    </div>
+
+    <div class="card" style="padding:6px 16px 10px">
+      <div class="trace-row"><span class="k">产地</span><span>平谷区大华山村 3 号桃园</span></div>
+      <div class="trace-row"><span class="k">采摘</span><span>11-06 早上 · 当日采摘当日发货</span></div>
+      <div class="trace-row"><span class="k">分拣</span><span>村分拣点 · 王师傅质检 · 抽检 3 张照片</span></div>
+      <div class="trace-row"><span class="k">箱码</span><span>DHT-2411-0386 · 首扫正品</span></div>
+      <div class="trace-row" style="border:none"><span class="k">售后</span><span>开箱坏果拍照，24 小时内包赔</span></div>
+    </div>
+
+    <p class="card-sub" style="margin-top:14px; text-align:center">微信内点开链接即可购买 · 无需下载 · 付款进银行存管专户</p>
+  </div>
+
+  <div class="buy-bottom">
+    <div style="line-height:1.2">
+      <div style="font-size:11px; color:var(--muted)">实付</div>
+      <div class="buy-price" style="font-size:22px">¥89</div>
+    </div>
+    <button class="buy-btn" id="payBtn">微信支付 · 立即购买</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>
+  const t = document.getElementById('toast');
+  let timer;
+  document.getElementById('payBtn').addEventListener('click', () => {
+    t.textContent = '付款 89 元 → 进入银行存管专户，村分拣点验货发货（演示）';
+    t.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(() => t.classList.remove('show'), 3200);
+  });
+</script>
+</body>
+</html>
