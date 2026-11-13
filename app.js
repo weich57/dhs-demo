@@ -973,10 +973,10 @@ document.addEventListener('click', (e) => {
 // 复制链接演示
 document.addEventListener('click', (e) => {
   if (e.target.id !== 'copyLinkBtn') return;
-  // http(s) 打开时用当前域名；双击 file:// 打开时用公网演示地址
+  // http(s) 打开时用当前域名；双击 file:// 打开时用正式部署地址
   const link = location.protocol.startsWith('http')
     ? location.origin + '/buy.html'
-    : 'https://dhsyangtao.loca.lt/buy.html';
+    : 'https://weich57.github.io/dhs-demo/buy.html';
   if (navigator.clipboard) navigator.clipboard.writeText(link).catch(() => {});
   toast('链接已复制：' + link + ' · 发到微信，好友点开就是下单页（演示）', 4200);
 });
