@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乡邻帮 · 数字乡村服务平台（演示）</title>
+<meta name="description" content="乡邻帮 · 数字乡村服务平台前端演示：货款银行托管、分拣点验货、坏果包赔、验收通过才放款。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#" data-go="home">
+      <span class="brand-mark">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 4c0 9-5 12-10 12H6c0-8 5-12 14-12Z"/><path d="M4 20c3-6 7-9 12-10"/>
+        </svg>
+      </span>
+      <span>
+        <span class="brand-name">乡邻帮</span>
+        <div class="brand-sub">数字乡村实验室 · 服务平台</div>
+      </span>
+    </a>
+
+    <nav class="nav-links">
+      <button class="nav-link active" data-go="home">首页</button>
+      <button class="nav-link" data-go="industry">产业带动</button>
+      <button class="nav-link hot" data-go="money">资金安全</button>
+      <button class="nav-link" data-go="order">我的订单</button>
+      <button class="nav-link" data-go="provider">接单端</button>
+    </nav>
+
+    <div class="nav-right">
+      <span class="demo-pill"><span class="dot"></span>演示环境 · 示例数据</span>
+      <button class="btn btn-dark" id="loginBtn" data-go="login" style="padding:8px 14px;font-size:13px">登录</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HOME ================= -->
+<section id="view-home" class="view active">
+
+  <div class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">县域乡村服务平台 · 平谷区大华山村</div>
+        <h1>东西卖得出去，<br><em>钱一分不差到手</em></h1>
+        <div class="hero-tags">
+          <span class="hero-tag">卖农产品</span>
+          <span class="hero-tag">货款托管</span>
+          <span class="hero-tag">微信点链接直购</span>
+          <span class="hero-tag">坏果包赔</span>
+          <span class="hero-tag">验收放款</span>
+          <span class="hero-tag">村里可查</span>
+        </div>
+        <p class="hero-sub">
+          平台只做三件事：帮你把货卖出去；买家付的钱先放进银行专户，谁都动不了；
+          发货前由村分拣点统一验货留证；买家收到的坏果直接赔。验收没问题，钱才放给你。
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-go="money">
+            先看钱怎么管安全
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <button class="btn btn-light" data-go="industry">我要卖农产品</button>
+        </div>
+        <div class="hero-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M11 12h1v5h1"/></svg>
+          手机、电脑浏览器都能打开，微信里点链接也能直接下单。页面为示例数据。
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-title">最要紧的三件事</div>
+        <div class="hero-line">
+          <span class="idx">1</span>
+          <p><b>钱不进个人腰包</b>　买家付的货款直接进银行存管专户，不经过接单方，也不进平台自己的账。</p>
+        </div>
+        <div class="hero-line">
+          <span class="idx">2</span>
+          <p><b>分拣点验货 + 坏果包赔</b>　发货前村分拣点统一抽检、过磅、封箱贴标、拍照；买家收货开箱拍照，坏果从尾款直接赔。</p>
+        </div>
+        <div class="hero-line">
+          <span class="idx">3</span>
+          <p><b>出了事有地方说</b>　有争议先冻住货款，两次验货记录就是证据，村里和平台一起判。</p>
+        </div>
+        <p class="hero-card-note">五类事共用这一套「钱 + 验货」的规矩，不只是卖货。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 五类事快捷入口 -->
+  <div class="container">
+    <div class="strip">
+      <span class="strip-label">平台能接的五类事</span>
+      <button class="pill live" data-go="industry"><span class="pd"></span>产业带动<small>已开通</small></button>
+      <button class="pill" data-go="placeholder" data-sector="people"><span class="pd"></span>民生服务<small>即将开通</small></button>
+      <button class="pill" data-go="placeholder" data-sector="eco"><span class="pd"></span>生态文明<small>即将开通</small></button>
+      <button class="pill" data-go="placeholder" data-sector="gov"><span class="pd"></span>科学治理<small>即将开通</small></button>
+      <button class="pill" data-go="placeholder" data-sector="land"><span class="pd"></span>创新发展<small>即将开通</small></button>
+    </div>
+  </div>
+
+  <!-- 三个大动作 -->
+  <div class="section" style="padding-top:44px">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-kicker">从这里开始</div>
+        <h2 class="sec-title">你是来做什么的？</h2>
+        <p class="sec-sub">选一个身份，直接进入对应的功能。页面里每一步都有提示，不需要懂平台术语。</p>
+      </div>
+
+      <div class="acts">
+        <button class="act" data-go="industry">
+          <span class="act-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.4 10.5a2 2 0 0 1-2 1.75H7.4a2 2 0 0 1-2-1.75L4 9Z"/><path d="M9 9V6.5a3 3 0 0 1 6 0V9"/></svg>
+          </span>
+          <h3>我要卖农产品</h3>
+          <p>发布大桃、蔬菜、鸡蛋的帮卖需求，平台派给附近的电商，帮你分级、包装、上架，卖完验收后钱从托管账户放给你。</p>
+          <span class="act-link">进入产业带动 →</span>
+        </button>
+
+        <button class="act" data-go="money">
+          <span class="act-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 5-3.6 8.2-8 9-4.4-.8-8-4-8-9V6l8-3Z"/><path d="M9 12h6M12 9v6"/></svg>
+          </span>
+          <h3>钱怎么保证安全 <span class="badge gold" style="vertical-align:middle">重点</span></h3>
+          <p>买家付款进银行专户，发货前分拣点验货、坏果包赔，验一段放一段；有争议先冻结。这一页最该先看。</p>
+          <span class="act-link">看钱怎么走 →</span>
+        </button>
+
+        <button class="act" data-go="provider">
+          <span class="act-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5.5h4M11 18.5h2"/></svg>
+          </span>
+          <h3>我是接单方</h3>
+          <p>电商、经纪人、合作社、服务队 —— 看看平台派给你的订单长什么样，怎么接、验完货怎么拿钱。</p>
+          <span class="act-link">打开接单端 →</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 五大板块 -->
+  <div class="section cream">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-kicker">平台全景 · 服务目录</div>
+        <h2 class="sec-title">五类事，一张清单</h2>
+        <p class="sec-sub">五类事共 38 项服务，全部共用同一套派单、验货、托管与留痕的规矩。现在能完整跑通的是产业带动 8 项，其余四类陆续开通。</p>
+      </div>
+
+      <div class="catalog">
+        <button class="cat live" data-go="industry">
+          <div class="cat-head"><span class="cat-no">01</span><span class="cat-state">已开通</span></div>
+          <h4>产业带动</h4>
+          <p class="cat-sub">把东西卖出去，把牌子立起来</p>
+          <div class="cat-items">
+            <span>特色农产品帮卖</span><span>电商代运营</span><span>分级包装</span>
+            <span>冷链运输</span><span>直播带货</span><span>商超对接</span>
+            <span>区域品牌</span><span>农技指导</span>
+          </div>
+          <div class="cat-foot">8 项 · 进入体验 →</div>
+        </button>
+
+        <button class="cat" data-go="placeholder" data-sector="people">
+          <div class="cat-head"><span class="cat-no">02</span><span class="cat-state">即将开通</span></div>
+          <h4>民生服务</h4>
+          <p class="cat-sub">照护老人、陪伴孩子、帮办跑腿</p>
+          <div class="cat-items">
+            <span>老人助餐</span><span>上门助浴</span><span>日常照护</span>
+            <span>留守儿童陪伴</span><span>代取药品</span><span>陪诊就医</span>
+            <span>健康随访</span><span>家教辅导</span><span>代办跑腿</span>
+          </div>
+          <div class="cat-foot">9 项 · 开通后可用 →</div>
+        </button>
+
+        <button class="cat" data-go="placeholder" data-sector="eco">
+          <div class="cat-head"><span class="cat-no">03</span><span class="cat-state">即将开通</span></div>
+          <h4>生态文明</h4>
+          <p class="cat-sub">村里干不干净，看得见、查得到</p>
+          <div class="cat-items">
+            <span>村庄保洁</span><span>垃圾清运</span><span>河道管护</span>
+            <span>绿化养护</span><span>公厕管护</span><span>秸秆处理</span>
+            <span>污水点巡检</span>
+          </div>
+          <div class="cat-foot">7 项 · 开通后可用 →</div>
+        </button>
+
+        <button class="cat" data-go="placeholder" data-sector="gov">
+          <div class="cat-head"><span class="cat-no">04</span><span class="cat-state">即将开通</span></div>
+          <h4>科学治理</h4>
+          <p class="cat-sub">平安、安全、村务，件件有回音</p>
+          <div class="cat-items">
+            <span>治安巡逻</span><span>隐患排查</span><span>应急处突</span>
+            <span>重点人群走访</span><span>矛盾调解</span><span>村务公开</span>
+            <span>村报编发</span>
+          </div>
+          <div class="cat-foot">7 项 · 开通后可用 →</div>
+        </button>
+
+        <button class="cat" data-go="placeholder" data-sector="land">
+          <div class="cat-head"><span class="cat-no">05</span><span class="cat-state">即将开通</span></div>
+          <h4>创新发展</h4>
+          <p class="cat-sub">土地、房子、项目，都能盘活</p>
+          <div class="cat-items">
+            <span>土地流转</span><span>地块测绘</span><span>闲置农房盘活</span>
+            <span>乡村建设用工</span><span>订单农业</span><span>新业态引入</span>
+            <span>项目申报代办</span>
+          </div>
+          <div class="cat-foot">7 项 · 开通后可用 →</div>
+        </button>
+      </div>
+
+      <p class="cat-note">同一套机制：发需求 → 平台派单 → 分拣点验货 → 坏果包赔 → 验收放款。</p>
+    </div>
+  </div>
+
+  <!-- 怎么用 -->
+  <div class="section" id="how">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-kicker">平台怎么用</div>
+        <h2 class="sec-title">四步，每一步都有记录</h2>
+        <p class="sec-sub">不用写材料、不用跑镇政府。手机发一条，剩下的平台管。</p>
+      </div>
+
+      <div class="steps4">
+        <div class="step4">
+          <div class="no">01</div>
+          <h5>说清楚要什么</h5>
+          <p>选服务项（帮卖、照护、保洁、巡逻等）、填数量与时间、定个价格，三分钟填完。</p>
+        </div>
+        <div class="step4">
+          <div class="no">02</div>
+          <h5>平台自动派单</h5>
+          <p>按技能、距离、信用、手上订单量、价格五个方面打分，把订单派给最合适的接单方。</p>
+        </div>
+        <div class="step4">
+          <div class="no">03</div>
+          <h5>分拣点验货发货</h5>
+          <p>发货前在村分拣点统一抽检、过磅、封箱贴标、拍照，全程在平台上存档；买家开箱坏果直接赔。</p>
+        </div>
+        <div class="step4">
+          <div class="no">04</div>
+          <h5>验收后分批放款</h5>
+          <p>货款本来就在银行专户里，验过一段放一段，剩下的留到售后期满，出问题还能冻住。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INDUSTRY ================= -->
+<section id="view-industry" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="home">首页</a> / <span>产业带动</span></div>
+      <h1 class="page-title">产业带动</h1>
+      <p class="page-sub">这个板块干两件事：把农产品卖出去，把村子的招牌立起来。下面的内容都能点，帮卖流程可以从头走到尾。</p>
+    </div>
+
+    <div class="safe-strip" data-go="money">
+      <span class="ss-ic">锁</span>
+      <div class="ss-txt">
+        <b>这笔生意的钱，平台不碰、接单方也碰不到</b>
+        <span>买家付款先存银行专户；发货前村分拣点统一验货，买家开箱坏果包赔；验收通过才分批放款。点这里看钱怎么走。</span>
+      </div>
+      <span class="ss-arrow">→</span>
+    </div>
+
+    <div class="tabs" id="industryTabs">
+      <button class="tab active" data-tab="sell">农产品帮卖</button>
+      <button class="tab" data-tab="ecom">电商帮卖</button>
+      <button class="tab" data-tab="brand">区域品牌</button>
+      <button class="tab" data-tab="data">基地与数据</button>
+      <button class="tab" data-tab="share">微信卖货与分销</button>
+    </div>
+
+    <!-- 帮卖 -->
+    <div class="tab-panel" data-panel="sell">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">本村待售的农产品</h3>
+              <p class="card-sub">农户发出来，等附近的电商来接。点「发起帮卖」可以体验完整流程。</p>
+            </div>
+            <span class="badge gold">今日 3 条</span>
+          </div>
+
+          <div class="prod">
+            <div class="prod-thumb">🍑</div>
+            <div class="prod-main">
+              <p class="prod-name">大桃 · 8 吨</p>
+              <div class="prod-meta">大华山村 · 采收 11-08 · 需要分级包装 + 冷链</div>
+            </div>
+            <div class="prod-right">
+              <div class="prod-price">5.4<small>元/斤 保底</small></div>
+              <div class="prod-meta" style="margin-top:4px"><span class="badge grey">待接单</span></div>
+            </div>
+          </div>
+
+          <div class="prod">
+            <div class="prod-thumb" style="background:linear-gradient(145deg,#eef1dd,#dbe5c9)">🥬</div>
+            <div class="prod-main">
+              <p class="prod-name">大棚蔬菜 · 2 吨</p>
+              <div class="prod-meta">东河村 · 每日可采 · 需要冷链直供</div>
+            </div>
+            <div class="prod-right">
+              <div class="prod-price">3.2<small>元/斤 保底</small></div>
+              <div class="prod-meta" style="margin-top:4px"><span class="badge grey">待接单</span></div>
+            </div>
+          </div>
+
+          <div class="prod">
+            <div class="prod-thumb" style="background:linear-gradient(145deg,#f6efe0,#e9dcc4)">🥚</div>
+            <div class="prod-main">
+              <p class="prod-name">土鸡蛋 · 500 斤</p>
+              <div class="prod-meta">西沟村 · 每周供 · 需要包装 + 直播</div>
+            </div>
+            <div class="prod-right">
+              <div class="prod-price">12<small>元/斤 保底</small></div>
+              <div class="prod-meta" style="margin-top:4px"><span class="badge grey">待接单</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="background:var(--cream)">
+          <h3 class="card-title">发起一条帮卖</h3>
+          <p class="card-sub">你只管说清楚「卖什么、多少、什么价」，剩下的交给平台。</p>
+
+          <div style="margin:18px 0 6px">
+            <div class="hero-line" style="border-bottom:1px dashed var(--hair);padding:12px 0">
+              <span class="idx" style="border-color:var(--hair);color:var(--green)">1</span>
+              <p style="color:var(--ink);font-size:13px">填产品、数量、保底价<br><span style="color:var(--muted);font-size:12px">价格你定，平台不压价</span></p>
+            </div>
+            <div class="hero-line" style="border-bottom:1px dashed var(--hair);padding:12px 0">
+              <span class="idx" style="border-color:var(--hair);color:var(--green)">2</span>
+              <p style="color:var(--ink);font-size:13px">选需要的服务<br><span style="color:var(--muted);font-size:12px">分级包装、冷链、直播、商超对接</span></p>
+            </div>
+            <div class="hero-line" style="padding:12px 0 4px">
+              <span class="idx" style="border-color:var(--hair);color:var(--green)">3</span>
+              <p style="color:var(--ink);font-size:13px">平台派单，接单方上门看货<br><span style="color:var(--muted);font-size:12px">卖完验收，按约定分账</span></p>
+            </div>
+          </div>
+
+          <button class="btn btn-dark btn-block" style="margin-top:18px" data-go="sell">
+            发起帮卖（以大桃 8 吨为例）
+          </button>
+          <p style="margin:12px 0 0;font-size:11.5px;color:#9aa79d;text-align:center">演示流程约 1 分钟，可反复体验</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 电商 -->
+    <div class="tab-panel" data-panel="ecom" hidden>
+      <div class="sec-head" style="margin-bottom:20px">
+        <p class="sec-sub" style="margin-top:0">这些是平台认证过的接单方。派单不是随机发、也不是谁先抢到给谁，按技能、距离、信用、手上订单量、价格五个方面综合打分。</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="broker" style="border:none;padding:0;margin:0">
+            <div class="avatar">李</div>
+            <div class="broker-main">
+              <p class="broker-name">李强 · 鲜果电商</p>
+              <div class="broker-meta">示范镇 · 专注桃类 3 年</div>
+              <div class="broker-tags"><span class="badge">信用 96</span><span class="badge gold">近 30 天 38 单</span></div>
+            </div>
+            <div class="score"><div class="num">96<small>分</small></div><div class="lbl">匹配度</div></div>
+          </div>
+          <p class="card-sub" style="margin-top:14px">自带 1.2 万粉丝直播间，能接「直播带货 + 分级包装」，从看货到打款平均 3 天。</p>
+        </div>
+
+        <div class="card">
+          <div class="broker" style="border:none;padding:0;margin:0">
+            <div class="avatar alt">王</div>
+            <div class="broker-main">
+              <p class="broker-name">王芳 · 果蔬合作社</p>
+              <div class="broker-meta">邻村 · 有冷藏库与分拣线</div>
+              <div class="broker-tags"><span class="badge">信用 92</span><span class="badge gold">近 30 天 22 单</span></div>
+            </div>
+            <div class="score"><div class="num">88<small>分</small></div><div class="lbl">匹配度</div></div>
+          </div>
+          <p class="card-sub" style="margin-top:14px">适合走商超与批发渠道，冷链运输成本低；直播能力弱，主要做线下批量出货。</p>
+        </div>
+
+        <div class="card">
+          <div class="broker" style="border:none;padding:0;margin:0">
+            <div class="avatar alt2">张</div>
+            <div class="broker-main">
+              <p class="broker-name">张伟 · 电商服务站</p>
+              <div class="broker-meta">镇级站点 · 代运营 6 个村</div>
+              <div class="broker-tags"><span class="badge">信用 89</span><span class="badge gold">近 30 天 41 单</span></div>
+            </div>
+            <div class="score"><div class="num">84<small>分</small></div><div class="lbl">匹配度</div></div>
+          </div>
+          <p class="card-sub" style="margin-top:14px">单量最多，但手上订单已排到 5 天后，本期派单会因「负载」扣分，作为备选。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 品牌 -->
+    <div class="tab-panel" data-panel="brand" hidden>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">区域品牌建设进度</h3>
+              <p class="card-sub">品牌这四件事按顺序推，做完一件验一件；没验收的部分不结钱。</p>
+            </div>
+            <span class="badge dark">已开通</span>
+          </div>
+
+          <div style="margin-top:18px">
+            <div class="mini-bar" style="width:100%;margin-bottom:18px">
+              <div class="lb"><span>品牌视觉与包装设计</span><span>100%</span></div>
+              <div class="tr" style="height:6px"><div class="fl" style="width:100%"></div></div>
+            </div>
+            <div class="mini-bar" style="width:100%;margin-bottom:18px">
+              <div class="lb"><span>短视频内容（12 条）</span><span>75%</span></div>
+              <div class="tr" style="height:6px"><div class="fl" style="width:75%"></div></div>
+            </div>
+            <div class="mini-bar" style="width:100%;margin-bottom:18px">
+              <div class="lb"><span>直播场次（2 场）</span><span>50%</span></div>
+              <div class="tr" style="height:6px"><div class="fl" style="width:50%"></div></div>
+            </div>
+            <div class="mini-bar" style="width:100%">
+              <div class="lb"><span>区域公用品牌申报</span><span>进行中</span></div>
+              <div class="tr" style="height:6px"><div class="fl" style="width:30%;background:var(--gold)"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="background:var(--cream)">
+          <h3 class="card-title">品牌怎么帮到卖货</h3>
+          <p class="card-sub">品牌不是做个 LOGO 就完了，它直接影响能不能进商超、能不能卖上价。</p>
+          <div style="margin-top:16px;font-size:13px;line-height:2;color:var(--muted)">
+            <p style="margin:0 0 10px"><b style="color:var(--ink)">统一包装</b> — 同一规格、同一标识，商超才肯上架。</p>
+            <p style="margin:0 0 10px"><b style="color:var(--ink)">可溯源</b> — 一物一码，扫码看到哪个村、哪块地、哪天采的。</p>
+            <p style="margin:0 0 10px"><b style="color:var(--ink)">内容素材</b> — 短视频和直播素材由平台统一产出，接单方直接能用。</p>
+            <p style="margin:0"><b style="color:var(--ink)">品牌授权</b> — 接单方使用区域品牌需备案，防止砸牌子。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 数据 -->
+    <div class="tab-panel" data-panel="data" hidden>
+      <div class="kpi-strip" style="margin-bottom:20px">
+        <div class="kpi"><div class="v">6<small>块</small></div><div class="k">纳入平台的蔬菜地块</div></div>
+        <div class="kpi"><div class="v">2<small>类</small></div><div class="k">环境与作业数据自动采集</div></div>
+        <div class="kpi"><div class="v">100<small>%</small></div><div class="k">上市农产品一物一码覆盖</div></div>
+        <div class="kpi"><div class="v">3<small>天</small></div><div class="k">从发布到货款到账的平均时间</div></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">地块档案</h3>
+              <p class="card-sub">每块地一个档案：种什么、谁在种、什么时候做了什么。</p>
+            </div>
+            <span class="badge">大华山村</span>
+          </div>
+
+          <div class="prod" style="padding-top:8px">
+            <div class="prod-thumb" style="font-size:12px;font-weight:700">A1</div>
+            <div class="prod-main">
+              <p class="prod-name">大桃 · 12 亩</p>
+              <div class="prod-meta">农户 张建国 · 采收期 11-06 至 11-12</div>
+            </div>
+            <div class="prod-right"><span class="badge gold">待售 8 吨</span></div>
+          </div>
+          <div class="prod">
+            <div class="prod-thumb" style="font-size:12px;font-weight:700">B2</div>
+            <div class="prod-main">
+              <p class="prod-name">大棚蔬菜 · 4 亩</p>
+              <div class="prod-meta">合作社 王芳 · 水肥一体化已接入</div>
+            </div>
+            <div class="prod-right"><span class="badge">数据正常</span></div>
+          </div>
+          <div class="prod">
+            <div class="prod-thumb" style="font-size:12px;font-weight:700">C3</div>
+            <div class="prod-main">
+              <p class="prod-name">土鸡蛋 · 1 个养殖点</p>
+              <div class="prod-meta">农户 刘小梅 · 每周出货 500 斤</div>
+             </div>
+            <div class="prod-right"><span class="badge">数据正常</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">最近 7 天 · 大棚温度</h3>
+              <p class="card-sub">传感器每 10 分钟上传一次，异常自动提醒。</p>
+            </div>
+          </div>
+          <svg viewBox="0 0 300 120" style="width:100%;height:150px" preserveAspectRatio="none">
+            <line x1="0" y1="100" x2="300" y2="100" stroke="#e4decc" stroke-width="1"/>
+            <line x1="0" y1="60" x2="300" y2="60" stroke="#f0ebdc" stroke-width="1"/>
+            <line x1="0" y1="20" x2="300" y2="20" stroke="#f0ebdc" stroke-width="1"/>
+            <polyline points="0,74 42,66 84,58 126,52 168,60 210,46 252,40 300,44"
+              fill="none" stroke="#2c5f4a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="168" cy="60" r="3.4" fill="#c08e3e"/>
+          </svg>
+          <p class="card-sub" style="margin-top:6px">11 月 1 日 — 11 月 7 日 · 单位 ℃ · 夜间最低 14℃，白天最高 26℃，处于适宜区间。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 微信卖货与分销 -->
+    <div class="tab-panel" data-panel="share" hidden>
+      <div class="sec-head" style="margin-bottom:18px">
+        <p class="sec-sub" style="margin-top:0">买家在微信里点开链接就能买；帮着转发的人能拿到佣金。这一页演示两件事：链接怎么发、钱怎么分。</p>
+      </div>
+
+      <!-- 微信直购流程 -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">微信点链接直接买 · 全流程</h3>
+              <p class="card-sub">从商品页到好友下单，三步，谁都会用</p>
+            </div>
+            <span class="badge gold">可点</span>
+          </div>
+
+          <!-- 商品卡（第一步） -->
+          <div style="border:1px solid var(--hair);border-radius:12px;padding:14px;margin-bottom:12px">
+            <div style="font-size:11px;color:var(--muted);margin-bottom:8px">第一步 · 你在平台商品页（手机 / 电脑都能开）</div>
+            <div class="prod">
+              <div class="prod-thumb">🍑</div>
+              <div class="prod-main">
+                <p class="prod-name">大华山白桃 · 12 装</p>
+                <div class="prod-meta">张大山家 3 号桃园 · 11-06 采摘 · 坏果包赔</div>
+              </div>
+              <div class="prod-right"><b style="font-family:var(--serif);font-size:18px">89 元</b></div>
+            </div>
+            <button class="btn btn-dark btn-block" id="copyLinkBtn" style="margin-top:12px">
+              复制链接，发给微信好友
+            </button>
+          </div>
+
+          <!-- 微信聊天模拟（第二步） -->
+          <div style="border:1px solid var(--hair);border-radius:12px;padding:14px;margin-bottom:12px;background:#ededed">
+            <div style="font-size:11px;color:var(--muted);margin-bottom:10px">第二步 · 粘贴到微信，好友收到一张商品卡片</div>
+            <div style="display:flex;gap:8px;align-items:flex-start">
+              <div class="avatar" style="width:32px;height:32px;font-size:13px;flex:none">李</div>
+              <div style="background:#95ec69;border-radius:8px;padding:10px;max-width:220px">
+                <div style="background:#fff;border-radius:6px;padding:8px">
+                  <div style="height:64px;border-radius:4px;background:linear-gradient(135deg,#f7e3d0,#e8c9a8);display:flex;align-items:center;justify-content:center;font-size:22px">🍑</div>
+                  <div style="font-size:13px;font-weight:600;margin-top:6px">大华山白桃 · 12 装</div>
+                  <div style="display:flex;justify-content:space-between;margin-top:2px">
+                    <span style="color:#c08e3e;font-weight:700">¥89.00</span>
+                    <span style="font-size:11px;color:#999">乡邻帮 · 大华山村</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="font-size:11px;color:#888;margin-top:8px">好友点卡片 → 直接进下单页</div>
+          </div>
+
+          <!-- 下单页（第三步） -->
+          <div style="border:1px solid var(--hair);border-radius:12px;padding:14px">
+            <div style="font-size:11px;color:var(--muted);margin-bottom:8px">第三步 · 好友点开就是下单页（不用下载、不用注册）</div>
+            <div class="ins-row"><span class="ik">商品</span><span class="iv">大华山白桃 12 装 × 1 箱</span></div>
+            <div class="ins-row"><span class="ik">付款</span><span class="iv">微信支付 89 元 → 直进银行存管专户</span></div>
+            <div class="ins-row"><span class="ik">发货</span><span class="iv">村分拣点验货贴码后发出，箱码可溯源</span></div>
+            <div class="ins-row"><span class="ik">售后</span><span class="iv">开箱坏果拍照，24 小时内包赔</span></div>
+          </div>
+        </div>
+
+        <!-- 二级分销机制 -->
+        <div class="card" style="background:var(--cream)">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">二级分销 · 佣金怎么分</h3>
+              <p class="card-sub">系统自动算、自动分，农户售价一分不让</p>
+            </div>
+            <span class="badge">只做两级 · 合规</span>
+          </div>
+
+          <div class="ins-row"><span class="ik">谁是一级</span><span class="iv">直接把链接发给买家的人（好友点他的链接下单）</span></div>
+          <div class="ins-row"><span class="ik">谁是二级</span><span class="iv">把链接转给「一级」的那个人（最早发链接的）</span></div>
+          <div class="ins-row"><span class="ik">一级佣金</span><span class="iv"><b>3%</b> · 89 元一箱得 2.67 元</span></div>
+          <div class="ins-row"><span class="ik">二级佣金</span><span class="iv"><b>1%</b> · 89 元一箱得 0.89 元</span></div>
+          <div class="ins-row"><span class="ik">钱从哪出</span><span class="iv">从接单方的服务费里出，<b>不占农户的 89 元</b></span></div>
+          <div class="ins-row"><span class="ik">怎么到账</span><span class="iv">买家确认收货后，佣金随放款自动结算到推广人实名账户</span></div>
+
+          <div style="border-top:1px solid var(--hair);margin-top:14px;padding-top:14px">
+            <div style="font-size:13px;font-weight:600;margin-bottom:10px">举个例子：王婶把链接发到广场舞群</div>
+            <div class="tl-item done"><div class="tl-time">11-08 10:00</div><h5 class="tl-title">王婶发链接 → 李姐下单 2 箱 178 元</h5><p class="card-sub" style="margin:0">王婶是一级，得 178 × 3% = 5.34 元</p></div>
+            <div class="tl-item done" style="margin-top:12px"><div class="tl-time">11-08 15:00</div><h5 class="tl-title">李姐觉得好吃，转给上海的表妹 → 表妹下单 3 箱 267 元</h5><p class="card-sub" style="margin:0">李姐得一级 8.01 元；王婶是二级，再得 2.67 元</p></div>
+            <div class="tl-item now" style="margin-top:12px"><div class="tl-time">结算</div><h5 class="tl-title">确认收货后自动到账，人人看得见明细</h5><p class="card-sub" style="margin:0">农户拿足 89 元/箱一分不少；佣金走平台账，村里台账全记录</p></div>
+          </div>
+
+          <p class="hint" style="margin-top:14px">按微信平台规则只做两级，不做三级及以上返佣（避免涉传风险）；佣金对农户零成本，对推广人有明细。</p>
+        </div>
+      </div>
+
+      <!-- 配套三件事 -->
+      <div class="grid-3" style="margin-top:16px">
+        <div class="card">
+          <span class="badge">统一客服</span>
+          <h3 class="card-title" style="margin:12px 0 8px">售后有人接</h3>
+          <p class="card-sub" style="margin:0">买家从下单页一键找客服，坏果拍照上传，24 小时内从托管尾款赔付——农户不用自己跟买家扯皮。</p>
+        </div>
+        <div class="card">
+          <span class="badge">驻村培训</span>
+          <h3 class="card-title" style="margin:12px 0 8px">不会用有人教</h3>
+          <p class="card-sub" style="margin:0">怎么发链接、怎么看佣金，分拣点蹲点 + 上门带一遍，教到会为止；村里培养 1–2 名管理员。</p>
+        </div>
+        <div class="card">
+          <span class="badge">数字人直播</span>
+          <h3 class="card-title" style="margin:12px 0 8px">直播间挂同款链接</h3>
+          <p class="card-sub" style="margin:0">卡通形象 7×24 小时直播讲品种、讲产地，直播间挂的就是这个商品链接，成本只有真人主播的零头。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SELL WIZARD ================= -->
+<section id="view-sell" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="industry">产业带动</a> / <span>发起帮卖</span></div>
+      <h1 class="page-title">发起一条帮卖</h1>
+      <p class="page-sub">三步填完，平台就会把这条需求派给附近合适的电商或经纪人。带 <b>*</b> 的必须填。</p>
+    </div>
+
+    <div class="stepper">
+      <div class="stp now" data-stp="1"><span class="c">1</span>产品信息</div>
+      <div class="stp-line"></div>
+      <div class="stp" data-stp="2"><span class="c">2</span>需要什么服务</div>
+      <div class="stp-line"></div>
+      <div class="stp" data-stp="3"><span class="c">3</span>确认提交</div>
+    </div>
+
+    <div class="card" style="max-width:900px">
+      <!-- step 1 -->
+      <div class="wstep" data-step="1">
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-product">卖什么 *</label>
+            <select class="input" id="f-product">
+              <option value="大桃">大桃（白桃 / 黄桃 / 油桃 / 蟠桃）</option>
+              <option value="大棚蔬菜">大棚蔬菜</option>
+              <option value="土鸡蛋">土鸡蛋</option>
+              <option value="稻米">稻米</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-qty">有多少 *</label>
+            <div style="display:flex;gap:8px">
+              <input class="input" id="f-qty" type="number" min="0.5" step="0.5" value="8">
+              <select class="input" id="f-unit" style="width:96px">
+                <option value="吨">吨</option>
+                <option value="斤">斤</option>
+              </select>
+            </div>
+            <span class="hint">按实际可出货量填，后面可以改</span>
+          </div>
+          <div class="field">
+            <label for="f-price">保底价（元/斤）*</label>
+            <input class="input" id="f-price" type="number" step="0.1" value="5.4">
+            <span class="hint">低于这个价平台不会自动成交，会先问你</span>
+          </div>
+          <div class="field">
+            <label for="f-village">在哪个村 *</label>
+            <select class="input" id="f-village">
+              <option>大华山村</option>
+              <option>东河村</option>
+              <option>西沟村</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="f-note">补充说明（选填）</label>
+            <input class="input" id="f-note" placeholder="例如：11 月 8 日可采收，果园在村口，货车能直接开到地头">
+          </div>
+        </div>
+      </div>
+
+      <!-- step 2 -->
+      <div class="wstep" data-step="2" hidden>
+        <p class="card-sub" style="margin:0 0 16px">这些服务都由接单方提供，费用从货款里直接扣，不用你先垫钱。</p>
+        <div class="chips" id="serviceChips">
+          <button class="chip on" data-svc="pack" data-type="per">
+            <span class="tick">✓</span>分级包装 <small>0.35 元/斤</small>
+          </button>
+          <button class="chip on" data-svc="cold" data-type="per">
+            <span class="tick">✓</span>冷链运输 <small>0.60 元/斤</small>
+          </button>
+          <button class="chip" data-svc="live" data-type="pct">
+            <span class="tick">✓</span>数字人直播 <small>1% 佣金 · 真人主播 25% 起</small>
+          </button>
+          <button class="chip" data-svc="market" data-type="pct">
+            <span class="tick">✓</span>商超对接 <small>2% 佣金</small>
+          </button>
+        </div>
+        <p class="card-sub" style="margin:16px 0 0">平台服务费 3%，用于派单、留痕、结算与售后。不成交不收。</p>
+      </div>
+
+      <!-- step 3 -->
+      <div class="wstep" data-step="3" hidden>
+        <div class="summary" id="summaryBox"></div>
+        <p class="card-sub" style="margin:14px 0 0">提交后平台按技能、距离、信用、手上订单量、价格五个方面匹配接单方，通常 5 分钟内出结果。</p>
+        <div class="safe-strip" style="margin-top:14px" data-go="money">
+          <span class="ss-ic">锁</span>
+          <div class="ss-txt">
+            <b>提交这一步不花钱，也不会让你先垫钱</b>
+            <span>买家付的货款先进银行专户；发货前分拣点验货、买家开箱坏果包赔，验收通过才分批放给你。点这里看钱怎么走。</span>
+          </div>
+          <span class="ss-arrow">→</span>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;gap:12px;margin-top:26px">
+        <button class="btn btn-ghost" id="wBack" data-go="industry">取消</button>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-ghost" id="wPrev" hidden>上一步</button>
+          <button class="btn btn-dark" id="wNext">下一步</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DISPATCH ================= -->
+<section id="view-dispatch" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="industry">产业带动</a> / <span>平台派单</span></div>
+      <h1 class="page-title">正在找最合适的接单方</h1>
+      <p class="page-sub">这不是群发广告，也不是谁先抢到就给谁。平台按五个维度打分，把订单给最合适的人。</p>
+    </div>
+
+    <div id="dispatchLoading">
+      <div class="dispatch-stage">
+        <div class="radar">
+          <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+          <div class="core">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><path d="M6.5 6.5 9.5 9.5M17.5 6.5 14.5 9.5M6.5 17.5 9.5 14.5M17.5 17.5 14.5 14.5"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
+          </div>
+        </div>
+        <h2 class="dispatch-title">正在匹配附近的接单方…</h2>
+        <p class="dispatch-sub">已扫到 12 位认证电商与经纪人，正在按五个维度计算匹配度</p>
+
+        <div class="geo-card in-radar" id="dispatchGeoCard">
+          <span class="gc-ic">⌖</span>
+          <div class="gc-left">
+            <div class="gc-label" id="dispatchGeoLabel">当前定位：示范镇中心（李强 · 鲜果电商）</div>
+            <div class="gc-coord" id="dispatchGeoCoord">lng 117.00230 · lat 40.39870　距桃园 4.2 公里</div>
+          </div>
+          <button class="gc-btn" id="dispatchGeoBtn">改一下</button>
+        </div>
+
+        <div class="mini-bars" style="margin-top:26px">
+          <div class="mini-bar"><div class="lb"><span>技能</span><span>30%</span></div><div class="tr"><div class="fl" id="barSkill" style="width:0%"></div></div></div>
+          <div class="mini-bar"><div class="lb"><span>距离</span><span>25%</span></div><div class="tr"><div class="fl" id="barDist" style="width:0%"></div></div></div>
+          <div class="mini-bar"><div class="lb"><span>信用</span><span>20%</span></div><div class="tr"><div class="fl" id="barCredit" style="width:0%"></div></div></div>
+          <div class="mini-bar"><div class="lb"><span>负载</span><span>15%</span></div><div class="tr"><div class="fl" id="barLoad" style="width:0%"></div></div></div>
+          <div class="mini-bar"><div class="lb"><span>报价</span><span>10%</span></div><div class="tr"><div class="fl" id="barPrice" style="width:0%"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dispatchResult" hidden>
+      <div class="grid-2">
+        <div>
+          <h3 class="card-title" style="margin-bottom:14px">按匹配度排序，建议派给第 1 位</h3>
+          <div id="candidates"></div>
+        </div>
+        <div class="card" style="background:var(--cream)">
+          <h3 class="card-title">订单摘要</h3>
+          <div class="money-list" id="dispatchSummary"></div>
+          <p class="card-sub" style="margin-top:14px">接单方确认后才会正式占用订单；2 小时内不确认，自动顺延给下一位。</p>
+        </div>
+      </div>
+
+      <div class="geo-log-wrap">
+        <div class="geo-log-head" id="geoLogHead">
+          <span class="gl-arrow">▸</span>
+          <span>后台日志 · 原始定位记录（仅平台可见）</span>
+        </div>
+        <div class="geo-log-body" id="geoLogBody">
+          <div class="gl-title">原始定位流水（demo）</div>
+          <div id="geoLogRows"></div>
+          <div class="gl-legend">
+            <span class="sys">绿色 = 设备返回的系统定位</span>
+            <span class="usr">蓝色 = 用户上报/手动改的定位</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORDER ================= -->
+<section id="view-order" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="home">首页</a> / <span>我的订单</span></div>
+      <h1 class="page-title">这笔生意走到哪一步了</h1>
+      <p class="page-sub">从报货到钱进你的卡，每一步谁做的、几点做的都有记录。发货前由村分拣点统一验货留证，买家开箱拍照、坏果从托管尾款直接赔——出了问题拿得出证据。</p>
+    </div>
+
+    <div class="order-head">
+      <div class="oh-left">
+        <h3 id="orderNo">订单 #BM20261105001 · 大桃帮卖</h3>
+        <p id="orderMeta">平谷区大华山村 · 大桃 8 吨 · 保底 5.4 元/斤 · 11 月 8 日采收</p>
+      </div>
+      <div class="oh-right">
+        <span class="badge gold" id="orderStatus">进行中</span>
+        <button class="btn btn-light btn-sm" id="advanceBtn">推进到下一步</button>
+      </div>
+    </div>
+
+    <div class="escrow-banner" id="escrowBanner"></div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 class="card-title" style="margin-bottom:18px">履约时间轴</h3>
+        <div class="timeline" id="timeline"></div>
+      </div>
+
+      <div>
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">接单方</h3>
+              <p class="card-sub">平台认证 · 信用可查</p>
+            </div>
+            <span class="badge">已接单</span>
+          </div>
+          <div class="broker" style="border:none;padding:0;margin:0">
+            <div class="avatar">李</div>
+            <div class="broker-main">
+              <p class="broker-name">李强 · 鲜果电商</p>
+              <div class="broker-meta">示范镇 · 4.2 公里 · 近 30 天 38 单</div>
+              <div class="broker-tags"><span class="badge">信用 96</span><span class="badge gold">好评 98%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">村分拣点质检</h3>
+              <p class="card-sub">村里自己人，可控可查</p>
+            </div>
+            <span class="badge">可控</span>
+          </div>
+          <div class="ins-row"><span class="ik">验货员</span><span class="iv">王师傅 · 分拣点质检员 DZ-07</span></div>
+          <div class="ins-row"><span class="ik">坏果规则</span><span class="iv">坏果率 5% 以内正常损耗；超出按包赔</span></div>
+          <div class="ins-row"><span class="ik">验什么</span><span class="iv">抽检、过磅、封箱贴标、拍照</span></div>
+          <p class="card-sub" style="margin-top:10px">验货的照片、重量、封箱标都存进订单；买家开箱坏果从托管尾款直接赔。</p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" style="margin-bottom:6px">钱怎么走</h3>
+          <p class="card-sub" style="margin:0 0 8px">分三次放：分拣点验货 20%、买家确认收货 60%、售后期满 20%。</p>
+          <div class="money-list" id="orderMoney"></div>
+          <button class="btn btn-dark btn-block" id="settleBtn" style="margin-top:16px" disabled>确认收货、结清尾款</button>
+          <p class="card-sub" style="margin-top:10px;text-align:center" id="settleHint">买家确认收货、售后期满后才能结清</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px">
+      <div class="sec-head" style="margin-bottom:16px">
+        <div class="sec-kicker">验货存证</div>
+        <h2 class="sec-title" style="font-size:24px">发货前分拣点验货，收货后坏果包赔</h2>
+        <p class="sec-sub">快递员不参与验货，长途运输损耗按正常商业风险处理：发货端村里自己验、留证；买家收到的坏果从托管尾款直接赔。</p>
+      </div>
+
+      <div class="inspect-grid">
+        <div class="inspect" id="inspectA">
+          <div class="ih">
+            <div>
+              <h4>① 发货前 · 村分拣点验货</h4>
+              <p>11-08 14:05 · 王师傅 · 分拣点质检员 DZ-07</p>
+            </div>
+            <span class="seal" data-seal>待进行</span>
+          </div>
+          <div class="ins-row"><span class="ik">抽检</span><span class="iv">随机开 10 箱，果径 ≥ 75mm，坏果 3 箱当场剔除</span></div>
+          <div class="ins-row"><span class="ik">过磅</span><span class="iv">净重 8,012 斤（申报 8,000 斤，误差 +0.15%）</span></div>
+          <div class="ins-row"><span class="ik">封箱</span><span class="iv">500 箱，统一封箱贴标 <b>SL-8842-0117</b></span></div>
+          <div class="ins-row"><span class="ik">拍照</span><span class="iv">箱内、磅秤、封箱码，共 3 张，已上传</span></div>
+          <div class="ins-row"><span class="ik">结论</span><span class="iv"><b>通过，准予发车</b>，触发首笔 20% 放款</span></div>
+          <div class="ins-shots">
+            <div class="shot">箱内抽检<span class="st">14:03</span></div>
+            <div class="shot">过磅读数<span class="st">8,012 斤</span></div>
+            <div class="shot">封箱贴标<span class="st">SL-8842-0117</span></div>
+          </div>
+        </div>
+
+        <div class="inspect" id="inspectB">
+          <div class="ih">
+            <div>
+              <h4>② 收货 · 买家开箱拍照 + 坏果包赔</h4>
+              <p>11-09 09:40 · 买家手机拍照上传，平台客服复核</p>
+            </div>
+            <span class="seal" data-seal>待进行</span>
+          </div>
+          <div class="ins-row"><span class="ik">封箱标</span><span class="iv">与发货时一致 <b>SL-8842-0117</b>，运输未拆封</span></div>
+          <div class="ins-row"><span class="ik">开箱</span><span class="iv">买家拍开箱视频，坏果 6 个拍特写并登记</span></div>
+          <div class="ins-row"><span class="ik">坏果包赔</span><span class="iv">6 个坏果从托管尾款直接赔，买家不用扯皮</span></div>
+          <div class="ins-row"><span class="ik">签收</span><span class="iv">买家确认收货，凭证自动存入订单</span></div>
+          <div class="ins-row"><span class="ik">结论</span><span class="iv"><b>通过</b>，坏果已赔，触发第二笔 60% 放款</span></div>
+          <div class="ins-shots">
+            <div class="shot">开箱视频<span class="st">09:38</span></div>
+            <div class="shot">坏果特写<span class="st">6 个</span></div>
+            <div class="shot">赔付记录<span class="st">已入账</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inspect-note">
+        <b>争议时只看三样：</b>① 分拣点验货的封箱标 SL-8842-0117　② 买家开箱照片/视频　③ 发货过磅数与登记坏果数。
+        对不上就冻住剩余货款，由村里和平台一起看记录判，不让任何一方单方面说了算。
+      </div>
+
+      <!-- 一物一码 -->
+      <div class="sec-head" style="margin:44px 0 16px">
+        <div class="sec-kicker">一物一码</div>
+        <h2 class="sec-title" style="font-size:24px">每箱桃一个专属码，扫一下就知道是谁家的</h2>
+        <p class="sec-sub">分拣点封箱时，系统给每一箱生成一个不重复的二维码，贴在箱面。这个码有三重用处：买家扫了放心、争议时是铁证、扫过还能复购。</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">买家扫码看到的页面</h3>
+              <p class="card-sub">微信扫一扫箱面二维码，无需登录直接打开</p>
+            </div>
+            <span class="badge">箱码 DHT-2411-0386</span>
+          </div>
+          <div class="ins-row"><span class="ik">产地</span><span class="iv">平谷区大华山村 · 张大山家 3 号桃园</span></div>
+          <div class="ins-row"><span class="ik">品种</span><span class="iv">大桃 · 白桃 · 12 装 · 果径 ≥ 75mm</span></div>
+          <div class="ins-row"><span class="ik">采摘</span><span class="iv">11-06 早上 · 当日采摘当日发货</span></div>
+          <div class="ins-row"><span class="ik">分拣</span><span class="iv">村分拣点 · 王师傅质检 · 抽检照片 3 张可点开看</span></div>
+          <div class="ins-row"><span class="ik">真伪</span><span class="iv"><b>首次扫码 · 正品</b>（此码此前未被扫过）</span></div>
+          <div class="ins-shots" style="margin-top:12px">
+            <div class="shot">果园实拍<span class="st">11-06</span></div>
+            <div class="shot">分拣照片<span class="st">可查看</span></div>
+            <div class="shot">再买一箱<span class="st">直达下单</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap:14px">
+          <div class="card" style="background:var(--cream)">
+            <h4 style="margin:0 0 6px;font-size:15px">① 溯源防伪</h4>
+            <p class="card-sub" style="margin:0">码上带农户、地块、采摘和分拣信息，一箱对一码、首次扫码显示正品——外村桃冒充大华山桃，扫一下就露馅，保的是「大华山」这块牌子。</p>
+          </div>
+          <div class="card" style="background:var(--cream)">
+            <h4 style="margin:0 0 6px;font-size:15px">② 争议铁证</h4>
+            <p class="card-sub" style="margin:0">买家说货不对，扫码记录 + 分拣照片 + 开箱照片三样对得上对不上，一目了然；码被扫过多次或区域异常，平台自动预警。</p>
+          </div>
+          <div class="card" style="background:var(--cream)">
+            <h4 style="margin:0 0 6px;font-size:15px">③ 复购入口</h4>
+            <p class="card-sub" style="margin:0">买家吃到好桃，扫箱底同款码直接回到这家农户的下单页——桃子好不好，让回头客替村里说话。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="inspect-note" style="margin-top:16px">
+        <b>和封箱标的关系：</b>封箱标 SL-8842-0117 是这一车货的批次号（管物流和验货）；箱码 DHT-2411-0386 是每一箱自己的身份证（管溯源和复购）。分拣点贴标时一次打完，不用多干活。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MONEY ================= -->
+<section id="view-money" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="home">首页</a> / <span>资金安全</span></div>
+      <h1 class="page-title">钱怎么保证安全</h1>
+      <p class="page-sub">村里买卖最怕两件事：货发了钱不到，钱付了货不对。平台的办法很简单——钱先放银行专户，谁都拿不走；发货前分拣点验货留证、买家开箱坏果包赔，验过一段放一段。</p>
+    </div>
+
+    <div class="assure-grid">
+      <div class="assure">
+        <div class="ic">银</div>
+        <h4>钱进银行专户</h4>
+        <p>买家付的货款直接进合作银行的存管专户，<b>不经过接单方，也不进平台自己的账</b>。</p>
+      </div>
+      <div class="assure">
+        <div class="ic">验</div>
+        <h4>分拣点验货留证</h4>
+        <p>发货前由<b>村分拣点</b>统一抽检、过磅、封箱贴标、拍照——自己人，可控可查；买家开箱坏果<b>包赔</b>。</p>
+      </div>
+      <div class="assure">
+        <div class="ic">放</div>
+        <h4>验一段放一段</h4>
+        <p>分拣验货通过放 20%，买家确认收货再放 60%，<b>售后 7 天无争议</b>放最后 20%。</p>
+      </div>
+      <div class="assure">
+        <div class="ic">判</div>
+        <h4>有争议先冻结</h4>
+        <p>任何一方点「有问题」，剩余货款立即冻住，<b>村里和平台一起看证据判</b>。</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">一笔 86,400 元的货款，钱是怎么走的</h3>
+            <p class="card-sub">按大桃 8 吨 × 5.4 元/斤算。点任意一步，右边跟着变。</p>
+          </div>
+          <span class="badge gold">可点</span>
+        </div>
+
+        <div class="escrow-steps" id="escrowSteps"></div>
+        <div class="escrow-who" id="escrowWho"></div>
+      </div>
+
+      <div class="card" style="background:var(--cream)">
+        <h3 class="card-title">钱现在在谁手上</h3>
+        <div class="holder-grid">
+          <div class="holder">
+            <div class="k">银行专户托管中</div>
+            <div class="v" id="holdEscrow">86,400 元</div>
+          </div>
+          <div class="holder hot">
+            <div class="k">已验货放款</div>
+            <div class="v" id="holdPaid">0 元</div>
+          </div>
+        </div>
+        <div class="money-list" id="escrowDetail" style="margin-top:16px"></div>
+        <button class="btn btn-dark btn-block" data-go="order" style="margin-top:16px">看一笔真实订单的进度</button>
+        <p class="card-sub" style="margin-top:10px;text-align:center">演示数据，不代表实际交易</p>
+      </div>
+    </div>
+
+    <div style="margin-top:44px">
+      <div class="sec-head">
+        <div class="sec-kicker">出了问题怎么办</div>
+        <h2 class="sec-title" style="font-size:26px">争议不靠吵，靠记录</h2>
+        <p class="sec-sub">买家说货不对、农户说钱少了，都可以点争议。钱不会凭空消失，也不会被谁单方面拿走。</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="badge gold">第一步</span>
+          <h3 class="card-title" style="margin:12px 0 8px">一键冻结</h3>
+          <p class="card-sub" style="margin:0">谁点争议，剩下的托管款立即冻住，接单方和农户都取不走。</p>
+        </div>
+        <div class="card">
+          <span class="badge gold">第二步</span>
+          <h3 class="card-title" style="margin:12px 0 8px">调验货记录</h3>
+          <p class="card-sub" style="margin:0">平台调出分拣点验货照片、过磅数、封箱标和买家开箱照片。</p>
+        </div>
+        <div class="card">
+          <span class="badge gold">第三步</span>
+          <h3 class="card-title" style="margin:12px 0 8px">村里参与判定</h3>
+          <p class="card-sub" style="margin:0">村委会有查询账号，看得到每一笔托管、放款和争议，判定结果双方都收得到。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:24px;background:var(--forest);color:var(--cream);border:none">
+      <h3 class="card-title" style="color:#fff">村里能查到什么</h3>
+      <div class="village-grid">
+        <div>
+          <div style="font-family:var(--serif);font-size:22px;font-weight:700">每一笔</div>
+          <div style="font-size:12px;color:#b6c7b2;margin-top:4px">哪个村、谁卖的、多少钱、托管到哪天</div>
+        </div>
+        <div>
+          <div style="font-family:var(--serif);font-size:22px;font-weight:700">每一次放款</div>
+          <div style="font-size:12px;color:#b6c7b2;margin-top:4px">哪次验货触发的、放了多少、谁确认的</div>
+        </div>
+        <div>
+          <div style="font-family:var(--serif);font-size:22px;font-weight:700">每一起争议</div>
+          <div style="font-size:12px;color:#b6c7b2;margin-top:4px">什么时候冻的、证据是什么、怎么判的</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOGIN ================= -->
+<section id="view-login" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="home">首页</a> / <span>登录</span></div>
+      <h1 class="page-title">手机号登录，实名认证</h1>
+      <p class="page-sub">平台所有买卖都实名进行：手机号注册 + 姓名认证。买家付款、货款放款、佣金结算都走实名账户，出了问题找得到人。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 class="card-title">个人账号（农户 / 接单方 / 买家）</h3>
+        <p class="card-sub" style="margin:0 0 16px">只能看到自己的订单、自己的货款、自己的佣金。</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="lg-phone-1">手机号 *</label>
+            <input class="input" id="lg-phone-1" value="138****6688" readonly>
+          </div>
+          <div class="field">
+            <label for="lg-code-1">短信验证码 *</label>
+            <div style="display:flex;gap:8px">
+              <input class="input" id="lg-code-1" placeholder="4 位" maxlength="4">
+              <button class="btn btn-light" type="button" id="sendCode1" style="white-space:nowrap">获取验证码</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="lg-name-1">实名姓名 *</label>
+            <input class="input" id="lg-name-1" placeholder="与银行卡一致">
+          </div>
+          <div class="field">
+            <label for="lg-id-1">身份证后四位 *</label>
+            <input class="input" id="lg-id-1" placeholder="如 0312" maxlength="4">
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block" id="doLoginUser" style="margin-top:16px">实名登录（个人）</button>
+        <p class="hint" style="margin-top:10px">演示环境：验证码任填 4 位数字即可</p>
+      </div>
+
+      <div class="card" style="background:var(--cream)">
+        <h3 class="card-title">村集体账号（村委会管理）</h3>
+        <p class="card-sub" style="margin:0 0 16px">村里专人持有，看得到<b>本村所有人</b>的交易与托管，个人账号看不到这里的数据。</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="lg-phone-2">村账号手机号 *</label>
+            <input class="input" id="lg-phone-2" value="010-6****78（村委办）" readonly>
+          </div>
+          <div class="field">
+            <label for="lg-code-2">短信验证码 *</label>
+            <div style="display:flex;gap:8px">
+              <input class="input" id="lg-code-2" placeholder="4 位" maxlength="4">
+              <button class="btn btn-light" type="button" id="sendCode2" style="white-space:nowrap">获取验证码</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="lg-name-2">管理员实名 *</label>
+            <input class="input" id="lg-name-2" placeholder="村委指定专人">
+          </div>
+          <div class="field">
+            <label>管理村 *</label>
+            <input class="input" value="平谷区大华山村" readonly>
+          </div>
+        </div>
+        <button class="btn btn-dark btn-block" id="doLoginVillage" style="margin-top:16px">登录村集体账号</button>
+        <p class="hint" style="margin-top:10px">村账号由村委会指定专人管理，操作全留痕，谁看过、谁导出过都有记录</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACCOUNT ================= -->
+<section id="view-account" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="home">首页</a> / <span>我的账户</span></div>
+      <h1 class="page-title" id="accTitle">我的账户</h1>
+      <p class="page-sub" id="accSub"></p>
+    </div>
+    <div id="accPersonal"></div>
+    <div id="accVillage" hidden></div>
+  </div>
+</section>
+
+<!-- ================= PROVIDER ================= -->
+<section id="view-provider" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="home">首页</a> / <span>接单端</span></div>
+      <h1 class="page-title">接单端 · 我是接单方</h1>
+      <p class="page-sub">电商、经纪人、合作社看到的界面。订单是平台按匹配度派过来的，不是靠抢。</p>
+    </div>
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-top"><span>9:41</span><span>乡邻帮 · 接单端</span><span>100%</span></div>
+        <div class="phone-body">
+          <div class="geo-bar" id="phoneGeoBar" title="点我修改当前定位">
+            <div class="gb-left"><span class="gb-ic">⌖</span><span class="gb-label" id="phoneGeoLabel">示范镇 · 鲜果电商</span></div>
+            <span class="gb-chev">▾</span>
+          </div>
+
+          <div class="geo-picker" id="phoneGeoPicker" hidden>
+            <h4>选择你当前所在的位置</h4>
+            <div class="gp-row" data-geo="0">
+              <div><div class="gp-name">李强 · 鲜果电商</div><div class="gp-sub">大华山镇中心 · 距大华山村 4.2 公里</div></div>
+              <span class="gp-check"></span>
+            </div>
+            <div class="gp-row" data-geo="1">
+              <div><div class="gp-name">王芳 · 果蔬合作社</div><div class="gp-sub">邻村 · 有冷藏库 · 距大华山村 6.1 公里</div></div>
+              <span class="gp-check"></span>
+            </div>
+            <div class="gp-row" data-geo="2">
+              <div><div class="gp-name">张伟 · 电商服务站</div><div class="gp-sub">镇级站点 · 代运营 6 个村 · 距大华山村 7.8 公里</div></div>
+              <span class="gp-check"></span>
+            </div>
+            <div class="gp-custom">
+              <h4 style="margin-top:4px">或手动输入坐标（仅在你知道的情况下）</h4>
+              <div class="gp-inputs">
+                <input placeholder="经度 (lng)" id="lngInput" inputmode="decimal">
+                <input placeholder="纬度 (lat)" id="latInput" inputmode="decimal">
+              </div>
+              <button class="btn btn-dark btn-sm" id="applyCustomGeo" style="width:100%">使用手动坐标</button>
+            </div>
+            <p style="font-size:10px;color:var(--muted);margin:8px 0 0">⚠ 系统每次都会记录你设备返回的原始定位，与你上报的坐标一并存档。</p>
+          </div>
+
+          <p class="phone-h" id="phoneGreeting">李强，有 1 个新订单派给你</p>
+
+          <div id="poNew">
+            <div class="new-order">
+              <div class="nw-top">
+                <span class="nw-title">大桃帮卖 · 8 吨</span>
+                <span class="badge gold">剩 1:58:20</span>
+              </div>
+              <div class="nw-meta" id="phoneOrderMeta">
+                大华山村 · 距你 4.2 公里<br>
+                保底 5.4 元/斤 · 预估成交 86,400 元<br>
+                需要：分级包装 + 冷链运输 + 直播带货
+              </div>
+              <div class="nw-top" style="margin:12px 0 0">
+                <span style="font-size:12px;color:var(--muted)">你的服务收入</span>
+                <span class="nw-price">8,192 元</span>
+              </div>
+              <div class="nw-actions">
+                <button class="btn btn-ghost" id="poReject">拒绝</button>
+                <button class="btn btn-dark" id="poAccept">接单</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="poAccepted" hidden>
+            <div class="new-order" style="background:#f2f7ef;border-color:var(--moss)">
+              <div class="nw-top">
+                <span class="nw-title" style="color:var(--green)">✓ 已接单</span>
+                <span class="badge">待上门验货</span>
+              </div>
+              <div class="nw-meta" style="margin-top:8px">
+                请在 2 小时内联系农户张建国，约上门看货时间。<br>
+                地址：大华山村 A1 地块（村口向西 300 米）<br>
+                发货前由村分拣点统一验货，验完你才拿第一笔款。
+              </div>
+              <div class="nw-actions">
+                <button class="btn btn-dark" style="flex:1" data-go="order">查看订单进度</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
+            <div class="card" style="padding:14px;text-align:center">
+              <div style="font-family:var(--serif);font-size:22px;font-weight:700">8,192</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">本月服务收入（元）</div>
+            </div>
+            <div class="card" style="padding:14px;text-align:center">
+              <div style="font-family:var(--serif);font-size:22px;font-weight:700">38</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">本月完成订单（单）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="provider-side">
+        <div class="card" style="margin-bottom:16px">
+          <h3 class="card-title">接单方靠什么被选中</h3>
+          <p class="card-sub">不是谁便宜谁赢，也不是谁先抢到给谁。平台按下面五项算综合分。</p>
+          <div style="margin-top:16px">
+            <div class="mini-bar" style="width:100%;margin-bottom:14px"><div class="lb"><span>技能匹配</span><span>30%</span></div><div class="tr" style="height:6px"><div class="fl" style="width:30%"></div></div></div>
+            <div class="mini-bar" style="width:100%;margin-bottom:14px"><div class="lb"><span>距离远近</span><span>25%</span></div><div class="tr" style="height:6px"><div class="fl" style="width:25%"></div></div></div>
+            <div class="mini-bar" style="width:100%;margin-bottom:14px"><div class="lb"><span>信用与评价</span><span>20%</span></div><div class="tr" style="height:6px"><div class="fl" style="width:20%"></div></div></div>
+            <div class="mini-bar" style="width:100%;margin-bottom:14px"><div class="lb"><span>手上订单量</span><span>15%</span></div><div class="tr" style="height:6px"><div class="fl" style="width:15%"></div></div></div>
+            <div class="mini-bar" style="width:100%"><div class="lb"><span>报价</span><span>10%</span></div><div class="tr" style="height:6px"><div class="fl" style="width:10%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="card" style="background:var(--cream)">
+          <h3 class="card-title">接单方能拿到什么</h3>
+          <div style="margin-top:12px;font-size:13px;line-height:2;color:var(--muted)">
+            <p style="margin:0 0 8px">· 稳定的订单来源，不用自己跑关系找货源</p>
+            <p style="margin:0 0 8px">· 履约记录自动变成信用，接得越多派得越多</p>
+            <p style="margin:0">· 货款先托管，验完货就放款，不怕农户拖欠</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLACEHOLDER ================= -->
+<section id="view-placeholder" class="view">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumb"><a href="#" data-go="home">首页</a> / <span id="phCrumb">板块</span></div>
+      <h1 class="page-title" id="phTitle">板块</h1>
+      <p class="page-sub" id="phSub"></p>
+    </div>
+
+    <div class="placeholder" id="phBox">
+      <div class="ph-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v3M16 4v3M3 10h18"/></svg>
+      </div>
+      <h3 id="phHead">正在开通</h3>
+      <p id="phDesc"></p>
+      <div class="ph-list" id="phList"></div>
+      <div>
+        <button class="btn btn-dark" data-go="industry">先看能用的「产业带动」</button>
+        <button class="btn btn-ghost" data-go="home" style="margin-left:8px">返回首页</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer">
+    <div>乡邻帮 · 数字乡村服务平台（前端演示）</div>
+    <div>演示数据，仅供沟通使用</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
